@@ -1,4 +1,4 @@
-package com.dsa;
+package arrays;
 
 public class Array1DMain {
 
