@@ -17,7 +17,7 @@ public class SingleNode {
         return this.next;
     }
 
-    public SingleNode setNext(SingleNode next) {
+    public void setNext(SingleNode next) {
         this.next = next;
     }
 }
