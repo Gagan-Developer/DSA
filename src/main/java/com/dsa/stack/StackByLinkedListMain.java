@@ -25,5 +25,6 @@ public class StackByLinkedListMain {
         System.out.println("Peek from stack");
         stack.peek();
 
+
     }
 }
