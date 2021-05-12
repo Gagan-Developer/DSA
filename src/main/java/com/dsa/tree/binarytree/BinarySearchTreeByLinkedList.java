@@ -92,35 +92,35 @@ public class BinarySearchTreeByLinkedList {
     }
 
     public void deleteNode(int value) {
+        System.out.println("Deleting " + value + "from BST");
         deleteBSTNode(getRoot(), value);
     }
 
-    public void deleteBSTNode(BinaryNode currNode, int value) {
-        if (isTreeEmpty()) {
-            System.out.println("Tree is empty.Nothing to delete");
-            return;
+    public BinaryNode deleteBSTNode(BinaryNode root, int value) {
+        if(root == null) {
+            System.out.println("Value is not present in the tree");
+            return null;
         }
 
-        if(currNode.getLeft() == null && currNode.getRight() == null && currNode.getValue() == value) {
-            currNode = null;
-            return;
-        }
-
-        int currNodeVal = currNode.getValue();
-
-        if (currNodeVal == value) {
-            BinaryNode minNode = minimumNodeOfRightSubTree(currNode);
-            System.out.println(minNode.getValue());
-            currNode.setValue(minNode.getValue());
-            deleteBSTNode(currNode.getRight(), minNode.getValue());
-            return;
-        }
-
-        if (currNodeVal > value) {
-            deleteBSTNode(currNode.getLeft(), value);
+        if(value < root.getValue()) {
+            root.setLeft(deleteBSTNode(root.getLeft(), value));
+        } else if(value > root.getValue()) {
+            root.setRight(deleteBSTNode(root.getRight(), value));
         } else {
-            deleteBSTNode(currNode.getRight(), value);
+            if(root.getLeft() != null && root.getRight() != null) {
+                BinaryNode tmp = root;
+                BinaryNode minNode = minimumNodeOfRightSubTree(tmp.getRight());
+                root.setValue(minNode.getValue());
+                root.setRight(deleteBSTNode(root.getRight(), minNode.getValue()));
+            } else if(root.getLeft() != null) {
+                root = root.getLeft();
+            } else if(root.getRight() != null) {
+                root = root.getRight();
+            } else {
+                root = null;
+            }
         }
+        return root;
     }
 
     public void deleteBST() {
