@@ -1,9 +1,11 @@
-package graph.node;
+package graph;
+
+import graph.node.GraphNode;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PathFindingByBFSMain {
+public class BFSByLinkedListMain {
     public static void main(String[] args) {
         System.out.println("String BFS Traversal");
 
@@ -15,7 +17,7 @@ public class PathFindingByBFSMain {
             nodeList.add(node);
         }
 
-        PathFindingByBFS graph = new PathFindingByBFS(nodeList);
+        BFSByLinkedList graph = new BFSByLinkedList(nodeList);
 
         // Add edges between nodes
         graph.addUndirectedEdge(1, 2);
@@ -31,6 +33,6 @@ public class PathFindingByBFSMain {
         graph.addUndirectedEdge(9, 10);
         graph.addUndirectedEdge(3, 10);
 
-        graph.bfsForSSSP(nodeList.get(2));
+        graph.bfs();
     }
 }

@@ -1,4 +1,6 @@
-package graph.node;
+package graph;
+
+import graph.node.GraphNode;
 
 import java.util.LinkedList;
 import java.util.List;
