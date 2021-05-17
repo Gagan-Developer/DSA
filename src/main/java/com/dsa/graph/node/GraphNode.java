@@ -1,11 +1,12 @@
 package graph.node;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GraphNode {
     private String name;
     private int index;
-    private List<GraphNode> neighbours;
+    private List<GraphNode> neighbours = new ArrayList<>();
     private boolean isVisited;
     private GraphNode parent;
 
