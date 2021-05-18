@@ -1,6 +1,6 @@
-package graph.node;
+package graph;
 
-import graph.TopologicalSort;
+import graph.node.GraphNode;
 
 import java.util.ArrayList;
 import java.util.List;
