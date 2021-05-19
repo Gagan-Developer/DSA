@@ -1,5 +1,7 @@
 package graph.node;
 
+import graph.DisjointSet;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -10,7 +12,17 @@ public class WeightedNode implements Comparable<WeightedNode> {
     private List<WeightedNode> neighbour = new ArrayList<>();
     private Map<WeightedNode, Integer> weightMap = new HashMap<>();
     private int distance;
+    private DisjointSet set;
     private WeightedNode parent;
+
+    public DisjointSet getSet() {
+        return set;
+    }
+
+    public void setSet(DisjointSet set) {
+        this.set = set;
+    }
+
     private boolean isVisited = false;
 
     public WeightedNode(String name) {
