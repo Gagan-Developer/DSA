@@ -35,7 +35,7 @@ public class DisjointSet {
         }
     }
 
-    private static void makeSet(List<WeightedNode> nodeList) {
+    public static void makeSet(List<WeightedNode> nodeList) {
         for (WeightedNode node : nodeList) {
             DisjointSet set = new DisjointSet();
             set.getNodeList().add(node);
@@ -43,11 +43,11 @@ public class DisjointSet {
         }
     }
 
-    private static DisjointSet findSet(WeightedNode node) {
+    public static DisjointSet findSet(WeightedNode node) {
         return node.getSet();
     }
 
-    private static DisjointSet union(WeightedNode node1, WeightedNode node2) {
+    public static DisjointSet union(WeightedNode node1, WeightedNode node2) {
         if (node1.getSet().equals(node2.getSet())) {
             System.out.println("Sets are equal. Union is not required");
             return null;
