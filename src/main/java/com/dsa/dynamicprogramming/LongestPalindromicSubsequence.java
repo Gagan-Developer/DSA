@@ -2,7 +2,7 @@ package dynamicprogramming;
 
 public class LongestPalindromicSubsequence {
     public static void main(String[] args) {
-        String s1 = "qazmadamifd";
+        String s1 = "qazmasdamifd"; // madam
         int[][] dp = new int[s1.length()][s1.length()];
 
         LongestPalindromicSubsequence obj = new LongestPalindromicSubsequence();
